@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    transform: perspective(1000px) rotate(-40deg) skew(25deg);
+    box-shadow: -90px 75px 20px rgba(0, 0, 0, 0.3);
+    background: #fff url(../img/iphone.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s;
+}
+
+.box:hover {
+    transform: perspective(1000px) rotate(-40deg) skew(25deg) translate(50px, -50px);
+    box-shadow: -150px 75px 20px rgba(0, 0, 0, 0.3);
+}
+
+.box::before {
+    content: "";
+    width: 90px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-40deg) translate(-90px, -38px);
+    background: #e8e7ec url(../img/apple.svg);
+    background-size: 36px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.box::after {
+    content: "";
+    width: 100%;
+    height: 77px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-50deg) translate(45px, 76px);
+    background: #e8e7ec;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
